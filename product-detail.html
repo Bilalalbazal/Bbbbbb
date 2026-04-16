@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore Pro - تفاصيل المنتج</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="/" class="logo"><i class="fas fa-bolt"></i><span data-i18n="store_name">تك ستور</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link" data-i18n="home">الرئيسية</a>
+        <a href="/products.html" class="nav-link" data-i18n="products">المنتجات</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle"><i class="fas fa-globe"></i><span id="langLabel">EN</span></button>
+        <a href="/checkout.html" class="cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section product-detail-page">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="/" data-i18n="home">الرئيسية</a>
+        <i class="fas fa-chevron-left"></i>
+        <a href="/products.html" data-i18n="products">المنتجات</a>
+        <i class="fas fa-chevron-left"></i>
+        <span id="breadcrumbName">...</span>
+      </div>
+
+      <div class="product-detail-card" id="productDetail">
+        <div class="product-detail-image">
+          <div class="image-zoom-container">
+            <img id="productImage" src="" alt="">
+          </div>
+          <!-- معرض الصور -->
+          <div class="product-gallery" id="productGallery"></div>
+        </div>
+        <div class="product-detail-info">
+          <span class="product-category-badge" id="productCategory"></span>
+          <h1 class="product-detail-name" id="productName"></h1>
+          <p class="product-detail-desc" id="productDesc"></p>
+          <div class="product-detail-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">(4.9)</span>
+          </div>
+          <div class="price-box">
+            <span class="product-detail-price" id="productPrice"></span>
+            <span class="product-detail-old-price" id="productOldPrice"></span>
+            <span class="discount-badge" id="discountBadge" style="display:none;"></span>
+          </div>
+          <div class="product-detail-stock" id="stockInfo"></div>
+          <div class="quantity-selector">
+            <label data-i18n="quantity">الكمية</label>
+            <div class="qty-controls">
+              <button id="qtyMinus">-</button>
+              <input type="number" id="qtyInput" value="1" min="1">
+              <button id="qtyPlus">+</button>
+            </div>
+          </div>
+          <div class="product-detail-actions">
+            <button class="btn btn-primary btn-lg" id="buyNowBtn">
+              <i class="fas fa-shopping-cart"></i>
+              <span data-i18n="buy_now">اشترِ الآن</span>
+            </button>
+            <button class="btn btn-outline btn-lg" id="addToCartBtn">
+              <i class="fas fa-plus"></i>
+              <span data-i18n="add_to_cart">أضف للسلة</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand"><i class="fas fa-bolt"></i><span data-i18n="store_name">تك ستور</span></div>
+      <p>&copy; 2026 TechStore Pro. <span data-i18n="footer">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script type="module" src="js/product-detail.js"></script>
+</body>
+</html>

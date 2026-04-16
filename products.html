@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore Pro - المنتجات</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="/" class="logo"><i class="fas fa-bolt"></i><span data-i18n="store_name">تك ستور</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link" data-i18n="home">الرئيسية</a>
+        <a href="/products.html" class="nav-link active" data-i18n="products">المنتجات</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle"><i class="fas fa-globe"></i><span id="langLabel">EN</span></button>
+        <a href="/checkout.html" class="cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section products-page">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-th-large"></i>
+        <span data-i18n="all_products">كل المنتجات</span>
+      </h2>
+
+      <div class="filter-bar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" data-i18n-placeholder="search" placeholder="بحث...">
+        </div>
+        <div class="category-filters" id="categoryFilters"></div>
+      </div>
+
+      <div class="products-grid" id="allProducts">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <i class="fas fa-box-open"></i>
+        <p data-i18n="no_products">لا توجد منتجات</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand"><i class="fas fa-bolt"></i><span data-i18n="store_name">تك ستور</span></div>
+      <p>&copy; 2026 TechStore Pro. <span data-i18n="footer">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/products.js"></script>
+</body>
+</html>

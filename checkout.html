@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore Pro - إتمام الشراء</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="/" class="logo"><i class="fas fa-bolt"></i><span data-i18n="store_name">تك ستور</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link" data-i18n="home">الرئيسية</a>
+        <a href="/products.html" class="nav-link" data-i18n="products">المنتجات</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle"><i class="fas fa-globe"></i><span id="langLabel">EN</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section checkout-page">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-box"></i>
+        <span data-i18n="checkout">إتمام الشراء</span>
+      </h2>
+
+      <div class="checkout-layout">
+        <!-- Cart Items -->
+        <div class="checkout-items">
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-shopping-bag"></i> <span data-i18n="products">المنتجات</span></h3>
+              <span class="item-count" id="itemCount"></span>
+            </div>
+            <div class="card-body" id="cartItems"></div>
+          </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="checkout-summary">
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-file-invoice"></i> <span data-i18n="order_details">تفاصيل الطلب</span></h3>
+            </div>
+            <div class="card-body">
+              <form id="checkoutForm" novalidate>
+                <div class="form-group">
+                  <label><i class="fas fa-user"></i> <span data-i18n="full_name">الاسم الكامل</span></label>
+                  <input type="text" id="custName" required>
+                </div>
+                <div class="form-group">
+                  <label><i class="fas fa-phone"></i> <span data-i18n="phone">رقم الهاتف</span></label>
+                  <input type="tel" id="custPhone" required placeholder="07XXXXXXXXX">
+                </div>
+                <div class="form-group">
+                  <label><i class="fas fa-city"></i> <span data-i18n="city">المدينة</span></label>
+                  <select id="custCity" required>
+                    <option value="" data-i18n="select_city">اختر المدينة</option>
+                  </select>
+                  <small class="delivery-info" id="deliveryInfo"></small>
+                </div>
+                <div class="form-group">
+                  <label><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">العنوان التفصيلي</span></label>
+                  <textarea id="custAddress" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label><i class="fas fa-sticky-note"></i> <span data-i18n="notes">ملاحظات (اختياري)</span></label>
+                  <textarea id="custNotes" rows="2"></textarea>
+                </div>
+              </form>
+
+              <div class="order-totals">
+                <div class="total-row">
+                  <span data-i18n="subtotal">المجموع</span>
+                  <span id="subtotal">0$</span>
+                </div>
+                <div class="total-row">
+                  <span data-i18n="delivery_fee">التوصيل</span>
+                  <span id="deliveryFee">0$</span>
+                </div>
+                <div class="total-row total-final">
+                  <span data-i18n="total">الإجمالي</span>
+                  <span id="totalAmount">0$</span>
+                </div>
+              </div>
+
+              <button class="btn btn-success btn-lg btn-block" id="confirmOrder">
+                <i class="fab fa-whatsapp"></i>
+                <span data-i18n="confirm_order">تأكيد الطلب عبر واتساب</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand"><i class="fas fa-bolt"></i><span data-i18n="store_name">تك ستور</span></div>
+      <p>&copy; 2026 TechStore Pro. <span data-i18n="footer">جميع الحقوق محفوظة</span></p>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script type="module" src="js/checkout.js"></script>
+</body>
+</html>
